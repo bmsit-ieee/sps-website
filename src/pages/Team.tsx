@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Linkedin, Mail, Globe } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Linkedin, Mail, Globe } from "lucide-react";
 
 const Team = () => {
   const [ref, inView] = useInView({
@@ -12,102 +12,63 @@ const Team = () => {
   const [hoveredMember, setHoveredMember] = useState<number | null>(null);
 
   const teamMembers = [
-    // First Row
     {
-      name: 'Dr. Saneesh',
-      role: 'Faculty Advisor',
-      image: 'https://i.imgur.com/G8JFNNi.png',
-      links: {
-        linkedin: '#',
-        email: '#',
-        website: '#',
-      },
+      name: "Dr Pallavi Singh",
+      role: "Faculty Coordinator",
+      image: "/pallavi.webp",
+      links: { linkedin: "#", email: "#", website: "#" },
     },
     {
-      name: 'Sourabh K H',
-      role: 'Chair',
-      image: 'https://i.imgur.com/iulX6yi.jpeg', 
-      links: {
-        linkedin: '#',
-        email: 'david@ieeesps.org',
-        website: '#',
-      },
+      name: "B Suraj",
+      role: "Chairperson",
+      image: "/suraj.png",
+      links: { linkedin: "#", email: "#", website: "#" },
     },
     {
-      name: 'Smriti',
-      role: 'Vice Chair',
-      image: 'https://i.imgur.com/UoAAp6m.jpeg', 
-      links: {
-        linkedin: '#',
-        email: '#',
-        website: '#',
-      },
-    },
-    // Second Row
-    {
-      name: 'Maanya',
-      role: 'Secretary',
-      image: 'https://i.imgur.com/S1Vnj9Z.jpeg',
-      links: {
-        linkedin: '#',
-        email: '#',
-        website: '#',
-      },
+      name: "Kirthana JL",
+      role: "Vice Chair",
+      image: "/kirthana.webp",
+      links: { linkedin: "#", email: "#", website: "#" },
     },
     {
-      name: 'Chinamy Bhat',
-      role: 'Treasurer',
-      image: 'https://i.imgur.com/20E0vn9.jpeg',
-      links: {
-        linkedin: '#',
-        email: '#',
-        website: '#',
-      },
+      name: "Abhitha Rohith",
+      role: "Secretary",
+      image: "/abhitha.webp",
+      links: { linkedin: "#", email: "#", website: "#" },
     },
     {
-      name: 'Keerthi Narayan',
-      role: 'Webmaster',
-      image: 'https://i.imgur.com/lPUT2pj.jpeg', 
-      links: {
-        linkedin: '#',
-        email: '#',
-        website: '#',
-      },
-    },
-    // Third Row
-    {
-      name: 'Deepak Reddy',
-      role: 'Webmaster',
-      image: 'https://i.imgur.com/66JXK4n.jpeg', 
-      links: {
-        linkedin: '#',
-        email: '#',
-        website: '#',
-      },
+      name: "Mohith K Aralikatte",
+      role: "Treasurer",
+      image: "/mohith.webp",
+      links: { linkedin: "#", email: "#", website: "#" },
     },
     {
-      name: 'Vikas',
-      role: 'Volcom Lead',
-      image: 'https://i.imgur.com/ou4chzI.jpeg', 
-      links: {
-        linkedin: '#',
-        email: '#',
-        website: '#',
-      },
+      name: "Abhay Krishna B",
+      role: "Joint Treasurer",
+      image: "/abhay.webp",
+      links: { linkedin: "#", email: "#", website: "#" },
     },
     {
-      name: 'Susan Tiji Varghese',
-      role: 'Volcom Lead',
-      image: 'https://i.imgur.com/Jk7OGo3.jpeg',
-      links: {
-        linkedin: '#',
-        email: '#',
-        website: '#',
-      },
+      name: "Lalitaditya M V",
+      role: "Project Officer",
+      image: "/lalitaditya.webp",
+      links: { linkedin: "#", email: "#", website: "#" },
+    },
+    {
+      name: "Pranathi Girimaji",
+      role: "Design Officer",
+      image: "/pranathi.webp",
+      links: { linkedin: "#", email: "#", website: "#" },
+    },
+    {
+      name: "Devendra Hosamani",
+      role: "Web Master",
+      image: "/devendra.jpg",
+      links: { linkedin: "#", email: "#", website: "#" },
     },
   ]; // Closing bracket for teamMembers array
 
- const containerVariants = {
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -142,7 +103,8 @@ const Team = () => {
             Our Team
           </h1>
           <p className="text-sm sm:text-xl text-gray-400 max-w-3xl mx-auto">
-            Meet the dedicated professionals leading the advancement of signal processing technology
+            Meet the dedicated professionals leading the advancement of signal
+            processing technology
           </p>
         </motion.div>
       </div>
@@ -152,7 +114,7 @@ const Team = () => {
         ref={ref}
         variants={containerVariants}
         initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
+        animate={inView ? "visible" : "hidden"}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:py-20"
       >
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-8">
@@ -163,7 +125,9 @@ const Team = () => {
               onMouseEnter={() => setHoveredMember(index)}
               onMouseLeave={() => setHoveredMember(null)}
               className={`relative group ${
-                index === teamMembers.length - 1 ? 'col-start-1 col-end-3 sm:col-auto flex justify-center' : ''
+                index === teamMembers.length - 1
+                  ? "col-start-1 col-end-3 sm:col-auto flex justify-center"
+                  : ""
               }`}
             >
               <div className="relative overflow-hidden rounded-lg aspect-square sm:aspect-[3/4] w-full max-w-[200px] sm:max-w-none">
@@ -211,13 +175,22 @@ const Team = () => {
                   animate={{ opacity: hoveredMember === index ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <a href={member.links.linkedin} className="p-1 sm:p-2 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 transition-colors">
+                  <a
+                    href={member.links.linkedin}
+                    className="p-1 sm:p-2 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 transition-colors"
+                  >
                     <Linkedin className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                   </a>
-                  <a href={`mailto:${member.links.email}`} className="p-1 sm:p-2 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 transition-colors">
+                  <a
+                    href={`mailto:${member.links.email}`}
+                    className="p-1 sm:p-2 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 transition-colors"
+                  >
                     <Mail className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                   </a>
-                  <a href={member.links.website} className="p-1 sm:p-2 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 transition-colors">
+                  <a
+                    href={member.links.website}
+                    className="p-1 sm:p-2 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 transition-colors"
+                  >
                     <Globe className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                   </a>
                 </motion.div>
